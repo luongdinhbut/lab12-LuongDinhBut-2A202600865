@@ -83,3 +83,12 @@ Dưới đây là đáp án cho các Exercise từ Part 1 đến Part 5 theo yê
 - **Health Check (`/health`) & Readiness (`/ready`):** Route traffic linh hoạt. Khi đang load Model (nặng) thì chưa ready, Load Balancer sẽ không đẩy request vào.
 - **Graceful Shutdown:** Bắt tín hiệu `SIGTERM`, dừng nhận connection mới và chờ các task cũ xử lý xong rồi mới Exit.
 - **Stateless Design:** Đây là lý do kiến trúc Nginx Load Balancer hoạt động tốt. Agent không lưu biến in-memory (như conversation history), mà đẩy toàn bộ context vào **Redis**. Nhờ vậy, User A đang chat với Agent 1, nếu Agent 1 rớt mạng, Agent 2 vẫn có thể đọc lịch sử từ Redis và trả lời liền mạch.
+
+---
+
+## Part 6: Final Project (Production Deployment)
+
+Hệ thống AI Agent (chạy trên Google Gemini với chức năng gọi Tool tự động) đã được tái cấu trúc thành công đạt chuẩn Production (bao gồm Rate Limit, Authentication, Cost Guard, Health Checks và Dockerized). 
+
+**Public API URL (sau khi deploy lên Render/Railway):** 
+`[Ghi đường link API public của bạn vào đây]`
